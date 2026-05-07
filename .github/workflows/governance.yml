@@ -1,0 +1,37 @@
+name: Governance
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  governance:
+    name: governance / public-artifact-gate
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm specs:check-public
+      - run: pnpm governance:public
+      - run: pnpm governance:speckit
+      - run: pnpm governance:docs
+      - run: pnpm governance:fixtures
+      - run: pnpm governance:tdd
+      - run: pnpm governance:pack

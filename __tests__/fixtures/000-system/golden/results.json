@@ -1,0 +1,56 @@
+{
+  "schema_version": "0.1.0",
+  "tool": "mcp-lint",
+  "scanned_path": ".",
+  "summary": {
+    "status": "evaluated",
+    "supported_languages": [
+      "typescript",
+      "python"
+    ],
+    "detected_languages": [
+      "typescript"
+    ],
+    "runtime_file_count": 1,
+    "ignored_file_count": 0,
+    "ignored_files_by_reason": {},
+    "raw_score": 80,
+    "effective_score": 80,
+    "score_mode": "raw",
+    "finding_count": 1,
+    "visible_finding_count": 1,
+    "scored_finding_count": 1,
+    "preview_finding_count": 0,
+    "advisory_count": 0,
+    "suppression_count": 0,
+    "override_count": 0,
+    "critical_cap_applied": false,
+    "score_cap_applied": false
+  },
+  "findings": [
+    {
+      "rule_id": "MCP-SEC-003a",
+      "base_severity": "high",
+      "effective_severity": "high",
+      "severity": "high",
+      "confidence": "high",
+      "location": {
+        "path": "server.ts",
+        "line": 5,
+        "column": 5
+      },
+      "message": "MCP HTTP transport binds to a non-loopback interface by default.",
+      "fix_suggestion": "Bind to 127.0.0.1 or localhost by default, and require explicit auth plus documentation for intentional network exposure.",
+      "fingerprint": "0243bbf4a1fd8337f0f33e0a",
+      "suppressed": false,
+      "score_impact": 20,
+      "raw_score_impact": 20,
+      "score_category": "scored",
+      "score_dedupe_key": "MCP-SEC-003a|default|.|bind:listen(3000, 0.0.0.0",
+      "score_applied": true,
+      "metadata": {
+        "bind_expression": "listen(3000, \"0.0.0.0\""
+      }
+    }
+  ]
+}

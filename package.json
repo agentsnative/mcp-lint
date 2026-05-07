@@ -1,0 +1,46 @@
+{
+  "name": "@agentsnative/mcp-lint",
+  "version": "0.0.0",
+  "private": false,
+  "description": "Static governance and linting foundations for MCP server repositories.",
+  "type": "module",
+  "bin": {
+    "mcp-lint": "dist/cli.js"
+  },
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist/",
+    "action.yml",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "SECURITY.md",
+    "package.json"
+  ],
+  "scripts": {
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "test": "node scripts/test/run-node-tests.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "specs:check-public": "tsx scripts/specs/validate-public-specs.ts specs",
+    "governance:public": "tsx scripts/governance/check-public-surface.ts",
+    "governance:speckit": "tsx scripts/governance/check-speckit-artifacts.ts",
+    "governance:specs": "pnpm specs:check-public",
+    "governance:tdd": "tsx scripts/governance/check-tdd.ts",
+    "governance:fixtures": "tsx scripts/governance/check-fixtures.ts",
+    "governance:docs": "tsx scripts/governance/check-docs.ts",
+    "governance:pack": "tsx scripts/governance/check-npm-pack.ts",
+    "governance:check": "tsx scripts/governance/index.ts",
+    "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm governance:check"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.0",
+    "minimatch": "^10.0.3",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "yaml": "^2.8.2"
+  }
+}

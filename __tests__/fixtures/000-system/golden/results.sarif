@@ -1,0 +1,64 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "mcp-lint",
+          "informationUri": "https://github.com/agentsnative/mcp-lint",
+          "rules": [
+            {
+              "id": "MCP-SEC-003a",
+              "name": "MCP-SEC-003a",
+              "shortDescription": {
+                "text": "MCP-SEC-003a"
+              },
+              "help": {
+                "text": "Bind to 127.0.0.1 or localhost by default, and require explicit auth plus documentation for intentional network exposure."
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "MCP-SEC-003a",
+          "level": "error",
+          "message": {
+            "text": "MCP HTTP transport binds to a non-loopback interface by default."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "server.ts"
+                },
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 5
+                }
+              }
+            }
+          ],
+          "partialFingerprints": {
+            "primaryLocationLineHash": "0243bbf4a1fd8337f0f33e0a"
+          },
+          "properties": {
+            "confidence": "high",
+            "base_severity": "high",
+            "effective_severity": "high",
+            "score_category": "scored",
+            "score_dedupe_key": "MCP-SEC-003a|default|.|bind:listen(3000, 0.0.0.0",
+            "score_applied": true,
+            "suppressed": false,
+            "fix_suggestion": "Bind to 127.0.0.1 or localhost by default, and require explicit auth plus documentation for intentional network exposure.",
+            "metadata": {
+              "bind_expression": "listen(3000, \"0.0.0.0\""
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
