@@ -1,8 +1,49 @@
 # MCP-Lint
 
-MCP-Lint V0 is an experimental static lint signal for TypeScript and Python MCP server repositories.
-It produces deterministic JSON, Markdown, SARIF, and README badge artifacts. It does not execute target
-servers, does not certify security, and may produce false positives. Unsupported languages are not scored.
+MCP-Lint V0 is an experimental static security lint signal for TypeScript and Python MCP server
+repositories. It looks for security-relevant MCP server defects and weak controls, such as exposed
+HTTP transports, unsafe shell or URL-fetch tools, path handling risks, secret handling problems,
+and schema-only validation around security-sensitive values.
+
+It produces deterministic JSON, Markdown, SARIF, and README badge artifacts. It does not execute
+target servers, does not certify security, and may produce false positives. Unsupported languages
+are not scored.
+
+## Install and run
+
+Normal users do not need to clone or build this repository. Run the CLI package directly and pass
+the path to the MCP server repository you want to scan:
+
+```bash
+pnpm dlx @agentsnative/mcp-lint scan .
+# npm users can also run:
+npx @agentsnative/mcp-lint scan .
+```
+
+This one-off command uses a temporary copy of the CLI; there is no separate manual install step.
+Use `.` when your terminal is already at the target repository root. You can also pass a relative or
+absolute path:
+
+```bash
+pnpm dlx @agentsnative/mcp-lint scan ../my-mcp-server
+pnpm dlx @agentsnative/mcp-lint scan /absolute/path/to/my-mcp-server
+```
+
+For repeated local use, install the package as a development dependency and run the installed binary:
+
+```bash
+pnpm add -D @agentsnative/mcp-lint
+pnpm exec mcp-lint scan .
+```
+
+The package requires Node.js 20 or newer. If you are developing MCP-Lint itself from this repository,
+build the local CLI before running it:
+
+```bash
+pnpm install
+pnpm build
+node dist/cli.js scan .
+```
 
 ## What V0 scores
 
@@ -20,6 +61,10 @@ Week-2 / v0.1 and lower-confidence rules still appear in reports as preview or a
 do not affect the public badge score unless scoring policy changes in a later release.
 
 ## Runtime-only default scope
+
+The `<path>` in `mcp-lint scan <path>` is the target MCP server repository root. All runtime
+filtering and output paths are relative to that root. For example, `mcp-lint scan ../my-mcp-server`
+writes results under `../my-mcp-server/.mcp-lint/`.
 
 The default scan mode is `runtime`: it ignores tests, fixtures, scripts, examples, build config, generated
 files, type declarations, and common non-runtime app folders such as `ui/`, `frontend/`, `client/`, and `web/`.
