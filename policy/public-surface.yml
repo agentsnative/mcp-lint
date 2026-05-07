@@ -1,0 +1,53 @@
+public_allowed:
+  - .gitignore
+  - README.md
+  - LICENSE
+  - NOTICE
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - SUPPORT.md
+  - AGENTS.md
+  - package.json
+  - pnpm-lock.yaml
+  - tsconfig.json
+  - tsconfig.build.json
+  - action.yml
+  - dist/**
+  - biome.json
+  - vitest.config.ts
+  - src/**
+  - docs/**
+  - specs/**/spec.md
+  - .specify/memory/constitution.md
+  - __tests__/fixtures/**
+  - __tests__/**/*.test.ts
+  - scripts/**
+  - policy/**
+  - .github/workflows/**
+  - .github/dependabot.yml
+  - .github/ISSUE_TEMPLATE/**
+
+public_blocked:
+  # Public policy blocks artifact classes, not exact private source names.
+  - "**/plan.md"
+  - "**/tasks.md"
+  - "**/research.md"
+  - "**/data-model.md"
+  - "**/quickstart.md"
+  - "**/contracts/**"
+  - "**/.speckit-private/**"
+  - "**/*requirements*.md"
+  - "**/*prompt*.md"
+  - "**/*final*summary*.md"
+  - "**/*.docx"
+  - "**/server-reports/**"
+  - "**/*-reports/**"
+  - "**/private-*/**"
+  - "**/*-private/**"
+  - "**/_private/**"
+  - "**/raw-inputs/**"
+  - "public-candidate/**"
+  - "export-log/**"
+  - "scrub-report/**"

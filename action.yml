@@ -1,0 +1,19 @@
+name: MCP-Lint
+description: Run MCP-Lint and upload scan artifacts.
+inputs:
+  path:
+    description: Repository path to scan.
+    required: false
+    default: .
+runs:
+  using: composite
+  steps:
+    - name: Run MCP-Lint scan
+      shell: bash
+      run: node "$GITHUB_ACTION_PATH/dist/cli.js" scan "${{ inputs.path }}"
+    - name: Upload MCP-Lint artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: mcp-lint
+        path: ${{ inputs.path }}/.mcp-lint

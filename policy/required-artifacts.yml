@@ -1,0 +1,28 @@
+required_files:
+  - AGENTS.md
+  - README.md
+  - LICENSE
+  - SECURITY.md
+  - CHANGELOG.md
+  - docs/artifact-governance.md
+  - docs/methodology.md
+  - docs/severity-rubric.md
+  - docs/false-positive-policy.md
+  - docs/disclosure-process.md
+  - docs/vendor-dispute.md
+  - docs/conflict-of-interest.md
+  - docs/SPEC-KIT.md
+  - .specify/memory/constitution.md
+  - specs/000-system/spec.md
+
+required_rule_docs:
+  - docs/rules/MCP-SEC-003a.md
+  - docs/rules/MCP-SEC-003b.md
+  - docs/rules/MCP-SEC-001.md
+  - docs/rules/MCP-SEC-005.md
+  - docs/rules/MCP-SEC-002.md
+  - docs/rules/MCP-QUAL-002.md
+  - docs/rules/MCP-SEC-004.md
+  - docs/rules/MCP-QUAL-001.md
+  - docs/rules/MCP-QUAL-003.md
+  - docs/rules/MCP-SEC-006.md

@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+.DS_Store
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -70,6 +71,44 @@ web_modules/
 .env.*
 !.env.example
 
+# Private planning / raw source material
+.speckit-private/
+_private/
+.artifacts/
+.runs/
+runs/
+dontcommit/
+.codex-local/
+.context/
+.mcp-lint/
+*-private/
+private-*/
+private-planning/
+
+# Raw prompt / research sources and Conductor planning exports
+*requirements*prompt*.md
+*spec-kit-prompts*.md
+*governance-prompt*.md
+*automation-guide.md
+*constitution*tdd*.md
+*workflow-*.html
+*final*summary*.md
+server-report*/
+*.docx
+
+# Generated SpecKit implementation artifacts
+**/plan.md
+**/tasks.md
+**/research.md
+**/data-model.md
+**/quickstart.md
+**/contracts/**
+
+# Local export staging
+public-candidate/
+export-log/
+scrub-report/
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
@@ -80,7 +119,8 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+# Root dist/** is committed because action.yml executes dist/cli.js.
+# dist
 .output
 
 # Gatsby files

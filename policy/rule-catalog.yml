@@ -1,0 +1,150 @@
+rules:
+  - id: MCP-SEC-003a
+    name: HTTP Non-Loopback Bind
+    severity: high
+    confidence: high
+    build_order: 1
+    spec: specs/001-sec-003a/spec.md
+    source_glob:
+      - src/rules/sec-003a.ts
+      - src/rules/**/sec-003a*.ts
+    test_glob:
+      - __tests__/rules/sec-003a.test.ts
+      - __tests__/**/sec-003a*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-003a/**
+
+  - id: MCP-SEC-003b
+    name: HTTP Transport Without Auth
+    severity: high
+    confidence: high
+    build_order: 2
+    spec: specs/002-sec-003b/spec.md
+    source_glob:
+      - src/rules/sec-003b.ts
+      - src/rules/**/sec-003b*.ts
+    test_glob:
+      - __tests__/rules/sec-003b.test.ts
+      - __tests__/**/sec-003b*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-003b/**
+
+  - id: MCP-SEC-001
+    name: Shell / Eval / Exec Exposed Without Operator Gate
+    severity: critical
+    confidence: high
+    build_order: 3
+    spec: specs/003-sec-001/spec.md
+    source_glob:
+      - src/rules/sec-001.ts
+      - src/rules/**/sec-001*.ts
+    test_glob:
+      - __tests__/rules/sec-001.test.ts
+      - __tests__/**/sec-001*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-001/**
+
+  - id: MCP-SEC-005
+    name: SSRF URL-Fetch Tool Without Denylist
+    severity: high
+    confidence: high
+    build_order: 4
+    spec: specs/004-sec-005/spec.md
+    source_glob:
+      - src/rules/sec-005.ts
+      - src/rules/**/sec-005*.ts
+    test_glob:
+      - __tests__/rules/sec-005.test.ts
+      - __tests__/**/sec-005*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-005/**
+
+  - id: MCP-QUAL-001
+    name: Hard Schema Checks Only
+    severity: high
+    confidence: high
+    build_order: 5
+    spec: specs/005-qual-001/spec.md
+    source_glob:
+      - src/rules/qual-001.ts
+      - src/rules/**/qual-001*.ts
+    test_glob:
+      - __tests__/rules/qual-001.test.ts
+      - __tests__/**/qual-001*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-QUAL-001/**
+
+  - id: MCP-SEC-002
+    name: Path Traversal in File Tools
+    severity: high
+    confidence: medium
+    build_order: 6
+    spec: specs/006-sec-002/spec.md
+    source_glob:
+      - src/rules/sec-002.ts
+      - src/rules/**/sec-002*.ts
+    test_glob:
+      - __tests__/rules/sec-002.test.ts
+      - __tests__/**/sec-002*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-002/**
+
+  - id: MCP-SEC-004
+    name: Secret Handling Hygiene
+    severity: high
+    confidence: medium
+    build_order: 7
+    spec: specs/007-sec-004/spec.md
+    source_glob:
+      - src/rules/sec-004.ts
+      - src/rules/**/sec-004*.ts
+    test_glob:
+      - __tests__/rules/sec-004.test.ts
+      - __tests__/**/sec-004*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-004/**
+
+  - id: MCP-QUAL-002
+    name: Destructive Tool Missing Safety Metadata
+    severity: medium
+    confidence: medium
+    build_order: 8
+    spec: specs/008-qual-002/spec.md
+    source_glob:
+      - src/rules/qual-002.ts
+      - src/rules/**/qual-002*.ts
+    test_glob:
+      - __tests__/rules/qual-002.test.ts
+      - __tests__/**/qual-002*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-QUAL-002/**
+
+  - id: MCP-QUAL-003
+    name: Tool Description Prose Quality
+    severity: medium
+    confidence: low
+    build_order: 9
+    spec: specs/009-qual-003/spec.md
+    source_glob:
+      - src/rules/qual-003.ts
+      - src/rules/**/qual-003*.ts
+    test_glob:
+      - __tests__/rules/qual-003.test.ts
+      - __tests__/**/qual-003*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-QUAL-003/**
+
+  - id: MCP-SEC-006
+    name: HTTP Origin Validation Missing
+    severity: high
+    confidence: high
+    build_order: 10
+    spec: specs/010-sec-006/spec.md
+    source_glob:
+      - src/rules/sec-006.ts
+      - src/rules/**/sec-006*.ts
+    test_glob:
+      - __tests__/rules/sec-006.test.ts
+      - __tests__/**/sec-006*.test.ts
+    fixture_glob:
+      - __tests__/fixtures/MCP-SEC-006/**
