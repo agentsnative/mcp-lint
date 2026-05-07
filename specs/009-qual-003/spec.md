@@ -1,7 +1,6 @@
 <!--
-Public-safe spec generated from private SpecKit output.
+Public-safe spec.
 Do not add raw prompts, private paths, or undisclosed vulnerability evidence.
-Source path intentionally omitted from public output.
 -->
 
 ---
@@ -14,9 +13,7 @@ phase: Week-2 / v0.1 deferred
 # Feature Spec: MCP-QUAL-003 Tool Description Prose Quality
 
 Feature slug: `009-qual-003`  
-Source section: Section 2.9  
 Phase: Week-2 / v0.1 deferred  
-Generation mode: manual SpecKit-style artifact, private workspace only
 
 ## Summary
 

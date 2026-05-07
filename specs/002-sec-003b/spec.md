@@ -1,7 +1,6 @@
 <!--
-Public-safe spec generated from private SpecKit output.
+Public-safe spec.
 Do not add raw prompts, private paths, or undisclosed vulnerability evidence.
-Source path intentionally omitted from public output.
 -->
 
 ---
@@ -14,9 +13,7 @@ phase: v0-alpha
 # Feature Spec: MCP-SEC-003b HTTP Transport Without Auth
 
 Feature slug: `002-sec-003b`  
-Source section: Section 2.2  
 Phase: v0-alpha  
-Generation mode: manual SpecKit-style artifact, private workspace only
 
 ## Summary
 

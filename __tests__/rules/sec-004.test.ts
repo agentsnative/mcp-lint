@@ -16,7 +16,7 @@ test("MCP-SEC-004 reports secret hygiene issues without exposing raw secret valu
   assert.equal(positive.some((finding) => finding.subtype === "direct_env_logging"), true);
   assert.equal(positive.some((finding) => finding.subtype === "provider_pattern_hardcoded_secret"), true);
   assert.equal(JSON.stringify(positive).includes("API_TOKEN"), false);
-  assert.equal(JSON.stringify(positive).includes("sk-test_public_dummy_token"), false);
+  assert.equal(JSON.stringify(positive).includes("sk-dummy1"), false);
   assert.equal(scanFixture("negative").length, 0);
   assert.equal(scanFixture("synthetic").some((finding) => finding.subtype === "query_param_secret"), true);
 });

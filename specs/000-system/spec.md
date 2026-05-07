@@ -1,15 +1,12 @@
 <!--
-Public-safe spec generated from private SpecKit output.
+Public-safe spec.
 Do not add raw prompts, private paths, or undisclosed vulnerability evidence.
-Source path intentionally omitted from public output.
 -->
 
 # Feature Spec: MCP-Lint v0 System
 
 Feature slug: `000-system`  
-Source section: Section 1 - System-Level Spec Kit Prompt  
 Phase: v0-alpha for installable artifact; v0.1 items are explicitly deferred  
-Generation mode: manual SpecKit-style artifact, private workspace only
 
 ## Summary
 
@@ -120,10 +117,9 @@ All rule specs, plans, and tasks inherit the Section 3 contract:
 
 ## Public/Private Boundary
 
-This spec, its plan, and its tasks are private raw SpecKit artifacts in
-`mcp-lint-private`. Only scrubbed `specs/**/spec.md` may be exported to
-`agentsnative/mcp-lint` after the private scrub pipeline. `plan.md`, `tasks.md`,
-research, contracts, data models, and quickstarts remain private.
+Only scrubbed `specs/**/spec.md` may be committed to this public repository.
+Generated implementation artifacts such as `plan.md`, `tasks.md`, research,
+contracts, data models, and quickstarts remain private.
 
 ## Public Validation Sections
 

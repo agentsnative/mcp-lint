@@ -1,7 +1,6 @@
 <!--
-Public-safe spec generated from private SpecKit output.
+Public-safe spec.
 Do not add raw prompts, private paths, or undisclosed vulnerability evidence.
-Source path intentionally omitted from public output.
 -->
 
 ---
@@ -14,9 +13,7 @@ phase: Week-2 / v0.1 deferred
 # Feature Spec: MCP-SEC-002 Path Traversal in File Tools
 
 Feature slug: `006-sec-002`  
-Source section: Section 2.5  
 Phase: Week-2 / v0.1 deferred  
-Generation mode: manual SpecKit-style artifact, private workspace only
 
 ## Summary
 
