@@ -23,7 +23,7 @@
   "scripts": {
     "lint": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
-    "test": "node --test --import tsx \"__tests__/**/*.test.ts\"",
+    "test": "node scripts/test/run-node-tests.mjs",
     "build": "tsc -p tsconfig.build.json",
     "specs:check-public": "tsx scripts/specs/validate-public-specs.ts specs",
     "governance:public": "tsx scripts/governance/check-public-surface.ts",
